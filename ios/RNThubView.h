@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface RNThubView : RCTViewComponentView
 @end
 
+@class RNThubView;
+
 NS_ASSUME_NONNULL_END
 
 #endif

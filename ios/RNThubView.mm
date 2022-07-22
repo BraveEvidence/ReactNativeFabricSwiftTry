@@ -29,7 +29,7 @@ using namespace facebook::react;
 @implementation RNThubView {
   UIView *_view;
   UILabel *_label;
-//  RNThubView *_rnThubView;
+  RNThubView *_rnThubView;
 }
 
 + (ComponentDescriptorProvider)componentDescriptorProvider
@@ -43,26 +43,26 @@ using namespace facebook::react;
     static const auto defaultProps = std::make_shared<const ThubViewProps>();
     
     _props = defaultProps;
-     
     
-//    _rnThubView = [[RNThubView alloc] init];
-    _view = [[UIView alloc] init];
-       
-       _label = [[UILabel alloc] init];
-       _label.text = @"Initial value";
-       [_view addSubview:_label];
-       
-       _label.translatesAutoresizingMaskIntoConstraints = false;
-       [NSLayoutConstraint activateConstraints:@[
-         [_label.leadingAnchor constraintEqualToAnchor:_view.leadingAnchor],
-         [_label.topAnchor constraintEqualToAnchor:_view.topAnchor],
-         [_label.trailingAnchor constraintEqualToAnchor:_view.trailingAnchor],
-         [_label.bottomAnchor constraintEqualToAnchor:_view.bottomAnchor],
-       ]];
-       _label.textAlignment = NSTextAlignmentCenter;
-       
-       self.contentView = _view;
-//       self.contentView = _rnThubView
+    
+    _rnThubView = [[RNThubView alloc] init];
+    //    _view = [[UIView alloc] init];
+    //
+    //    _label = [[UILabel alloc] init];
+    //    _label.text = @"Initial value";
+    //    [_view addSubview:_label];
+    //
+    //    _label.translatesAutoresizingMaskIntoConstraints = false;
+    //    [NSLayoutConstraint activateConstraints:@[
+    //      [_label.leadingAnchor constraintEqualToAnchor:_view.leadingAnchor],
+    //      [_label.topAnchor constraintEqualToAnchor:_view.topAnchor],
+    //      [_label.trailingAnchor constraintEqualToAnchor:_view.trailingAnchor],
+    //      [_label.bottomAnchor constraintEqualToAnchor:_view.bottomAnchor],
+    //    ]];
+    //    _label.textAlignment = NSTextAlignmentCenter;
+    //
+    //    self.contentView = _view;
+    self.contentView = _rnThubView;
     
   }
   
@@ -75,9 +75,9 @@ using namespace facebook::react;
   const auto &newViewProps = *std::static_pointer_cast<ThubViewProps const>(props);
   
   if (oldViewProps.color != newViewProps.color) {
-//    NSString * colorToConvert = [[NSString alloc] initWithUTF8String: newViewProps.color.c_str()];
-//    [_view setBackgroundColor:[self hexStringToColor:colorToConvert]];
-//    _view.backgroundColor = [UIColor redColor];
+    //    NSString * colorToConvert = [[NSString alloc] initWithUTF8String: newViewProps.color.c_str()];
+    //    [_view setBackgroundColor:[self hexStringToColor:colorToConvert]];
+    //    _view.backgroundColor = [UIColor redColor];
   }
   
   [super updateProps:props oldProps:oldProps];
